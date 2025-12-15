@@ -1,0 +1,282 @@
+/* ===== БАЗА ===== */
+    :root{
+      --c-body: #faf7fb;        /* фон страницы (desktop) */
+      --c-header: #fff9c4;      /* lightyellow */
+      --c-about:  #ffc0cb;      /* pink */
+      --c-portfolio: #ccffcc;
+      --c-form:   #dbf3ff;
+      --c-contacts: #e6e6fa;
+      --c-footer: #dcdcdc;
+
+      --c-brand: hotpink;
+      --radius: 30px;
+      --gap-lg: 60px;
+      --gap-md: 40px;
+      --gap-sm: 20px;
+      --container-pad: 100px;
+    }
+	/* Контейнер для кнопок формы */
+	.btn-row {
+	display: flex;
+	gap: 15px;          /* расстояние между кнопками */
+	flex-wrap: wrap;    /* чтобы на узких экранах кнопки переносились вниз */
+	margin-top: 10px;
+	}
+		*{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--c-body);
+      color: #222;
+      line-height: 1.6;
+    }
+    h1,h2,h3{ margin: 0 0 16px; }
+    a{ color: inherit; text-decoration: none; }
+
+    /* ===== ШАПКА ===== */
+    header.top{
+      background: var(--c-header);
+      text-align: center;
+      padding: 20px;
+    }
+    .brand-title{
+      color: hotpink;
+      font-weight: 700;
+      font-size: 48px;
+    }
+    .nav-buttons{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .nav-buttons a{
+      padding: 10px 20px;
+      background: var(--c-brand);
+      color: #fff;
+      border-radius: 100px;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .nav-buttons a:hover{ transform: translateY(-1px); opacity: .95; }
+
+    /* ===== СЕКЦИИ ОБЩЕЕ ===== */
+    section.section{
+      padding: var(--container-pad);
+      border-radius: 0;
+    }
+
+    /* ===== О НАС ===== */
+    #about.section{
+      background: var(--c-about);
+      display: flex;             /* flex: текст + картинка */
+      align-items: center;
+      gap: var(--gap-lg);
+      color: #222;
+      border-radius: 0;
+    }
+    .about-text, .about-img{ flex: 1 1 50%; }
+    .about-title{
+      color: #fff9c4;
+      font-weight: 700;
+      font-size: 38px;
+    }
+    .about-img img{
+      width: 100%;
+      max-width: 100%;
+      display: block;
+      border-radius: var(--radius);
+    }
+
+    /* ===== ПОРТФОЛИО ===== */
+    #portfolio.section{
+      background: var(--c-portfolio);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+    }
+    .portfolio-head{
+      width: 100%;
+      text-align: right;
+    }
+    .portfolio-title{
+      color: hotpink;
+      font-weight: 700;
+      font-size: 38px;
+    }
+    .gallery{
+      display: flex;             /* flex-галерея */
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .gallery-img{
+      width: 300px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      display: block;
+    }
+
+    /* ===== МОДАЛЬНОЕ ОКНО ===== */
+    #modal{
+      display:none;
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.8);
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+    }
+    #modal-img{
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      display:block;
+    }
+    .modal-close{
+      position:absolute; top:20px; right:30px;
+      color:#fff; font-size:40px; cursor:pointer;
+    }
+
+    /* ===== ФОРМА ЗАКАЗА ===== */
+    #anceta.section{
+      background: var(--c-form);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+    }
+    #anceta h2{
+      color: var(--c-brand);
+      font-weight: 700;
+      font-size: 38px;
+      text-align: left;
+      margin-bottom: 12px;
+    }
+    #anceta form{ font-size: 20px; }
+
+    /* Общий стиль для анкеты */
+    #anceta, 
+    #anceta input, 
+    #anceta select, 
+    #anceta textarea, 
+    #anceta button {
+      font-family: 'Montserrat', sans-serif;
+    }
+    /* Поля формы */
+    #anceta input[type="text"],
+    #anceta input[type="email"],
+    #anceta input[type="number"],
+    #anceta select,
+    #anceta textarea {
+      font-size: 16px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      width: 100%;
+      max-width: 480px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+    /* Радиокнопки и чекбоксы */
+    #anceta input[type="radio"],
+    #anceta input[type="checkbox"] { margin-right: 8px; }
+    /* Кнопки */
+    #anceta input[type="submit"], 
+    #anceta input[type="reset"] {
+      background-color: hotpink;
+      color: white;
+      border: none;
+      border-radius: 100px;
+      padding: 12px 25px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-right: 10px;
+      transition: background 0.3s;
+    }
+    #anceta input[type="submit"]:hover, 
+    #anceta input[type="reset"]:hover { background-color: deeppink; }
+
+    /* ===== КОНТАКТЫ ===== */
+    #contacts.section{
+      background: var(--c-contacts);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+    }
+    .contacts-head{
+      width: 100%;
+      text-align: right;
+    }
+    .contacts-title{
+      color: hotpink;
+      font-weight: 700;
+      font-size: 38px;
+    }
+
+    /* ===== ПОДВАЛ ===== */
+    footer.site-footer{
+      background: var(--c-footer);
+      padding: 60px 40px;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .to-top{
+      padding: 10px 20px;
+      display: inline-block;
+      background-color: gray;
+      color: white;
+      border-radius: 100px;
+      margin-top: 20px;
+    }
+
+    /* ===================== АДАПТИВ ===================== */
+    /* --- Планшет (601–900px) --- */
+    @media (max-width: 900px) and (min-width: 601px){
+      :root{
+        --c-body: #fff3e0;    /* тёплый фон */
+      }
+      .brand-title{ font-size: 42px; }
+      section.section{ padding: 70px; }
+      #about.section{ flex-direction: column; gap: var(--gap-md); }
+      .about-title{ font-size: 34px; }
+      .gallery-img{ width: 280px; }
+      #anceta h2, .portfolio-title, .contacts-title{ font-size: 34px; }
+    }
+
+    /* --- Телефон (до 600px) --- */
+    @media (max-width: 600px){
+      :root{
+        --c-body: #ffebee;   /* светло-розовый */
+      }
+      .brand-title{ font-size: 32px; }
+      .nav-buttons{ gap: 10px; }
+      .nav-buttons a{ padding: 8px 16px; }
+
+      section.section{ padding: 28px; }
+
+      /* О нас — в колонку, картинка под текстом */
+      #about.section{ flex-direction: column; gap: var(--gap-sm); }
+      .about-title{ font-size: 28px; }
+
+      /* Галерея – по одной/две в ряд, но всё равно flex */
+      .gallery{
+        justify-content: center;
+        gap: 14px;
+      }
+      .gallery-img{ width: 100%; max-width: 320px; }
+
+      /* Заголовки поменьше */
+      #anceta h2, .portfolio-title, .contacts-title{ font-size: 26px; }
+
+      /* Чуть меньше поля у формы */
+      #anceta input[type="text"],
+      #anceta input[type="email"],
+      #anceta input[type="number"],
+      #anceta select,
+      #anceta textarea { max-width: 100%; }
+
+      footer.site-footer{ padding: 40px 24px; }
+    }
