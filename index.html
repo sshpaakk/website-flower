@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <title>Сайт цветочного бутика "Бутон"</title>
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!-- Шрифт -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.min.css">
-  <script src="js/script.min.js" defer></script>  
+  <!-- Стили (правильный путь) -->
+  <link rel="stylesheet" href="./css/style.min.css">
 </head>
+
 <body>
 
   <!-- Шапка -->
@@ -38,7 +39,7 @@
       </p>
     </div>
     <div class="about-img">
-      <img src="img/1.jpg" alt="Стиль нашего бутика">
+      <img src="./img/1.jpg" alt="Стиль нашего бутика">
     </div>
   </section>
 
@@ -48,9 +49,9 @@
       <h2 class="portfolio-title">Галерея</h2>
     </div>
     <div class="gallery">
-      <img src="img/2.jpg" alt="Композиция 1" class="gallery-img">
-      <img src="img/3.jpg" alt="Композиция 2" class="gallery-img">
-      <img src="img/4.jpg" alt="Композиция 3" class="gallery-img">
+      <img src="./img/2.jpg" alt="Композиция 1" class="gallery-img">
+      <img src="./img/3.jpg" alt="Композиция 2" class="gallery-img">
+      <img src="./img/4.jpg" alt="Композиция 3" class="gallery-img">
     </div>
   </section>
 
@@ -101,10 +102,10 @@
       <label><input type="checkbox" id="package" name="extras" value="package"> Подарочная упаковка</label><br>
       <label><input type="checkbox" id="card" name="extras" value="card"> Открытка с пожеланием</label><br>
 
-    <div class="btn-row">
-		<input type="submit" value="Отправить заказ">
-		<input type="reset" value="Сбросить форму">
-	</div>
+      <div class="btn-row">
+        <input type="submit" value="Отправить заказ">
+        <input type="reset" value="Сбросить форму">
+      </div>
     </form>
   </section>
 
@@ -124,6 +125,7 @@
     <a href="#top" class="to-top">Наверх</a>
   </footer>
 
-  <script src="script.js" defer></script>
+  <!-- Скрипт (правильный путь) -->
+  <script src="./js/script.min.js" defer></script>
 </body>
 </html>
