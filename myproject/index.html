@@ -1,13 +1,137 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>myproject</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Цветочный бутик «Бутон»</title>
+
+  <!-- Шрифт -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Скрипт -->
+  <script src="./js/script.min.js" defer></script>
+</head>
+
+<body>
+
+  <header class="top" id="top">
+    <h1 class="brand-title">Цветочный авторский бутик «Бутон»</h1>
+
+    <nav class="nav-buttons" aria-label="Основная навигация">
+      <a href="#about">О нас</a>
+      <a href="#portfolio">Галерея</a>
+      <a href="#order">Заказ</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="about-text">
+        <h2 class="about-title" id="about-title">О нас</h2>
+        <p>
+          Цветочный магазин «Бутон» — это место, где каждый букет создаётся с любовью и вниманием к деталям.
+          Мы предлагаем свежие цветы, стильные композиции и оригинальные подарки для любого случая: от романтических встреч до торжественных мероприятий.
+        </p>
+        <p>
+          Наша команда флористов подберёт идеальное решение именно для вас, а быстрая доставка сохранит свежесть и красоту каждого цветка.
+          «Бутон» — мы говорим языком цветов!
+        </p>
+      </div>
+
+      <div class="about-img">
+        <img src="./img/1.webp" alt="Интерьер цветочного бутика «Бутон»" loading="lazy">
+      </div>
+    </section>
+
+    <section id="portfolio" class="section" aria-labelledby="portfolio-title">
+      <div class="portfolio-head">
+        <h2 class="portfolio-title" id="portfolio-title">Галерея</h2>
+      </div>
+
+      <div class="gallery" aria-label="Галерея букетов">
+        <img src="./img/2.webp" alt="Букет: композиция 1" class="gallery-img" loading="lazy">
+        <img src="./img/3.webp" alt="Букет: композиция 2" class="gallery-img" loading="lazy">
+        <img src="./img/4.webp" alt="Букет: композиция 3" class="gallery-img" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Модальное окно -->
+    <div id="modal" aria-hidden="true">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Закрыть">&times;</button>
+      <!-- src НЕ задаём, чтобы валидатор не ругался -->
+      <img id="modal-img" alt="Увеличенное изображение из галереи" style="display:none;">
+    </div>
+
+    <section id="order" class="section" aria-labelledby="order-title">
+      <h2 id="order-title">Оформи заказ</h2>
+
+      <form action="//submit" method="post">
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="username" required><br>
+
+        <label for="surname">Фамилия:</label><br>
+        <input type="text" id="surname" name="surname" required><br>
+
+        <label for="address">Адрес доставки:</label><br>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="money">Ваш бюджет:</label><br>
+        <input type="number" id="money" name="money" min="1000" max="100000000" required><br>
+
+        <label for="flower">Выберите, на какой цветок аллергия:</label><br>
+        <select id="flower" name="flower">
+          <option value="">Выберите</option>
+          <option value="lily">Лилия</option>
+          <option value="hydrangea">Гортензия</option>
+          <option value="rose">Роза</option>
+          <option value="daisy">Ромашка</option>
+          <option value="sunflower">Подсолнух</option>
+          <option value="none">Нету аллергии</option>
+        </select><br>
+
+        <label for="message">Расскажите, к какому событию нужен букет:</label><br>
+        <textarea id="message" name="message" rows="5" cols="40" placeholder="Введите текст здесь..."></textarea><br>
+
+        <p><b>Способ получения:</b></p>
+        <label><input type="radio" id="delivery" name="delivery_type" value="delivery" checked> Доставка</label><br>
+        <label><input type="radio" id="pickup" name="delivery_type" value="pickup"> Самовывоз</label><br>
+
+        <p><b>Дополнительно:</b></p>
+        <label><input type="checkbox" id="package" name="extras" value="package"> Подарочная упаковка</label><br>
+        <label><input type="checkbox" id="card" name="extras" value="card"> Открытка с пожеланием</label><br>
+
+        <div class="btn-row">
+          <input type="submit" value="Отправить заказ">
+          <input type="reset" value="Сбросить форму">
+        </div>
+      </form>
+    </section>
+
+    <section id="contacts" class="section" aria-labelledby="contacts-title">
+      <div class="contacts-head">
+        <h2 class="contacts-title" id="contacts-title">Контакты</h2>
+        <p>Телефон: +7 777-777-77-77</p>
+        <p>Email: <a href="mailto:s.wpakovskaya@gmail.com">s.wpakovskaya@gmail.com</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p style="margin-bottom: 20px; font-size: 16px;">© ООО «Бутон», 2025</p>
+    <p style="margin-bottom: 20px; font-size: 16px;">Все права защищены. Копирование запрещено.</p>
+    <a href="#top" class="to-top">Наверх</a>
+  </footer>
+
+</body>
 </html>
