@@ -25,3 +25,23 @@ images.forEach(img => {
     modal.addEventListener('click', (e) => {
       if (e.target === modal) modal.style.display = 'none';
     });
+
+    // ===== Таблица цен: выбор композиции =====
+    const priceRows = document.querySelectorAll('.price-table tbody tr');
+
+    priceRows.forEach(row => {
+      const button = row.querySelector('.select-btn');
+
+      button.addEventListener('click', () => {
+        // Снять выделение со всех строк
+        priceRows.forEach(r => r.classList.remove('selected'));
+
+        // Выделить текущую
+        row.classList.add('selected');
+
+        // Получаем название букета
+        const bouquetName = row.cells[0].textContent;
+
+        alert(`Вы выбрали композицию: «${bouquetName}»`);
+      });
+    });

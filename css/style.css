@@ -276,7 +276,49 @@
       #anceta input[type="email"],
       #anceta input[type="number"],
       #anceta select,
-      #anceta textarea { max-width: 100%; }
+      #anceta textarea { max-width: 100ы%; }
 
       footer.site-footer{ padding: 40px 24px; }
+    }
+    
+    /* ===== ТАБЛИЦА ЦЕН ===== */
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      font-size: 16px;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .price-table th {
+      background-color: hotpink;
+      color: white;
+    }
+
+    .price-table tbody tr:hover {
+      background-color: #ffe4ef;
+    }
+
+    .price-table tbody tr.selected {
+      background-color: #ffc0cb;
+    }
+
+    .select-btn {
+      padding: 8px 16px;
+      background-color: hotpink;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .select-btn:hover {
+      background-color: deeppink;
     }
