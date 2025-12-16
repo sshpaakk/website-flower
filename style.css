@@ -280,51 +280,59 @@
 
       footer.site-footer{ padding: 40px 24px; }
     }
-    /* ===== ТАБЛИЦА ЦЕН ===== */
+    /* ===== ТАБЛИЦА ЦЕН — ПРОРИСОВАННАЯ ===== */
     .price-table {
       width: 100%;
-      border-collapse: collapse;          /* ОБЯЗАТЕЛЬНО */
+      border-collapse: collapse;          /* чтобы линии не дублировались */
       margin-top: 30px;
-      background-color: #fff;
-      border: 2px solid hotpink;          /* внешняя рамка */
+      background-color: #ffffff;
+      border: 3px solid #ff69b4;          /* ВНЕШНЯЯ РАМКА */
     }
 
+    /* ЯЧЕЙКИ */
     .price-table th,
     .price-table td {
       padding: 14px 16px;
-      border: 1px solid #ccc;             /* границы ячеек */
+      border: 2px solid #999999;          /* ЧЁТКИЕ ЛИНИИ */
       text-align: left;
+      vertical-align: middle;
     }
 
+    /* ЗАГОЛОВКИ */
     .price-table th {
-      background-color: hotpink;
-      color: white;
+      background-color: #ff69b4;
+      color: #ffffff;
       font-weight: 700;
+      text-align: center;
     }
 
+    /* ЧЁТКОЕ РАЗДЕЛЕНИЕ СТРОК */
     .price-table tbody tr:nth-child(even) {
-      background-color: #fff5fa;          /* зебра */
+      background-color: #ffe6f0;
     }
 
+    /* HOVER */
     .price-table tbody tr:hover {
-      background-color: #ffd6e8;          /* hover */
+      background-color: #ffb6d9;
     }
 
+    /* ВЫБРАННАЯ СТРОКА */
     .price-table tbody tr.selected {
-      background-color: #ffb6d1;          /* выбранная строка */
+      background-color: #ff9fcf;
     }
 
-    /* Кнопка */
+    /* КНОПКА */
     .select-btn {
       padding: 6px 14px;
-      background-color: hotpink;
-      color: white;
-      border: none;
-      border-radius: 16px;
+      background-color: #ffffff;
+      color: #333;
+      border: 2px solid #ff69b4;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
     }
 
     .select-btn:hover {
-      background-color: deeppink;
+      background-color: #ff69b4;
+      color: #ffffff;
     }
