@@ -336,3 +336,11 @@
       background-color: #ff69b4;
       color: #ffffff;
     }
+
+    table {
+      border: 5px solid red !important;
+    }
+
+    th, td {
+      border: 5px solid blue !important;
+    }
